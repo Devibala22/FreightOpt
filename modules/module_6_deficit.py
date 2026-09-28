@@ -280,9 +280,6 @@ def run_module_6(role: str = "Administrator"):
         file_name=f"tn_infrastructure_deficit_matrix_{selected_year}.csv",
         mime="text/csv"
     )
-
-    st.success("✅ **Module 6 Infrastructure Deficit Page Complete**: Multi-pillar scoring, radar visualizer, and investment impact simulator active.")
-
 if __name__ == "__main__":
     st.set_page_config(
         page_title="FreightOpt - Module 6 Deficit Page",

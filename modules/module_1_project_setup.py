@@ -142,9 +142,6 @@ def run_module_1(role: str = "Administrator"):
         file_name="tamil_nadu_freight_dataset.csv",
         mime="text/csv"
     )
-
-    st.success("✅ **Module 1 Setup Complete**: Project layout, SQLite database engine, configuration tokens, and 38 Tamil Nadu districts seed dataset are fully operational.")
-
 if __name__ == "__main__":
     # Standalone execution support
     st.set_page_config(

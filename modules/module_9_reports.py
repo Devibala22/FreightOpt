@@ -205,9 +205,6 @@ def run_module_9(role: str = "Administrator"):
                 mime="text/csv",
                 use_container_width=True
             )
-
-    st.success("✅ **Module 9 Reports Suite Complete**: Executive policy briefing compiler and multi-format CSV export suite active.")
-
 if __name__ == "__main__":
     st.set_page_config(
         page_title="FreightOpt - Module 9 Reports",

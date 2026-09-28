@@ -283,8 +283,6 @@ def run_module_7(role: str = "Administrator"):
             mime="text/csv"
         )
 
-    st.success("✅ **Module 7 Freight Prediction Page Complete**: Machine Learning pipeline, model benchmarks (R² = 98.7%), and demand forecasts operational.")
-
 if __name__ == "__main__":
     st.set_page_config(
         page_title="FreightOpt - Module 7 Freight Prediction",

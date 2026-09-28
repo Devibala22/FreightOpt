@@ -223,9 +223,6 @@ def run_module_3(role: str = "Administrator"):
         file_name=f"tn_freight_dataset_{selected_year}.csv",
         mime="text/csv"
     )
-
-    st.success("✅ **Module 3 Visualizations Upgraded**: Legends, axis scales, text padding, and multi-year growth trend chart updated.")
-
 if __name__ == "__main__":
     st.set_page_config(
         page_title="FreightOpt - Module 3 Dashboard",

@@ -193,9 +193,6 @@ def run_module_5(role: str = "Administrator"):
         file_name=f"tn_gis_spatial_metrics_{selected_year}.csv",
         mime="text/csv"
     )
-
-    st.success("✅ **Module 5 GIS Map Complete**: Interactive spatial visualization, heatmap layers, and district popups active.")
-
 if __name__ == "__main__":
     st.set_page_config(
         page_title="FreightOpt - Module 5 GIS Map",

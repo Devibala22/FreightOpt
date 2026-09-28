@@ -223,9 +223,6 @@ def run_module_10(role: str = "Administrator"):
                 </div>
             </div>
             """, unsafe_allow_html=True)
-
-    st.success("🎉 **Module 10 API Integration Complete**: All 10 project modules fully operational!")
-
 if __name__ == "__main__":
     st.set_page_config(
         page_title="FreightOpt - Module 10 API Integration",

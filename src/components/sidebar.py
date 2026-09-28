@@ -7,18 +7,18 @@ and multi-module navigation across all 10 project modules.
 import streamlit as st
 from src.logic.auth import init_auth_session, is_authenticated, get_current_user
 
-# All 10 Modules in explicit user sequence
+# Clean Module Pipeline Titles (Without "Module X:" prefix)
 MODULES_LIST = [
-    "Module 1: Project Setup",
-    "Module 2: Authentication UI",
-    "Module 3: Dashboard",
-    "Module 4: Project Input",
-    "Module 5: Tamil Nadu GIS Map",
-    "Module 6: Infrastructure Deficit Page",
-    "Module 7: Freight Prediction Page",
-    "Module 8: Budget Optimization",
-    "Module 9: Reports",
-    "Module 10: API Integration"
+    "Project Setup",
+    "Authentication UI",
+    "Dashboard",
+    "Project Input",
+    "Tamil Nadu GIS Map",
+    "Infrastructure Deficit Page",
+    "Freight Prediction Page",
+    "Budget Optimization",
+    "Reports",
+    "API Integration"
 ]
 
 def render_sidebar():
@@ -72,7 +72,7 @@ def render_sidebar():
         selected_module = st.radio(
             "Select Module:",
             options=MODULES_LIST,
-            index=1,  # Default to Module 2 if active
+            index=1,  # Default to Authentication UI if active
             label_visibility="collapsed"
         )
 

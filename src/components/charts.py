@@ -29,18 +29,25 @@ def render_top_districts_bar_chart(df: pd.DataFrame, n: int = 10) -> go.Figure:
         text_auto=".1f",
         color="freight_volume_million_tonnes",
         color_continuous_scale=["#1E3A8A", "#3B82F6", "#60A5FA"],
-        labels={"freight_volume_million_tonnes": "Annual Freight (Million Tonnes)", "district_name": "District"},
-        title=f"🚛 Top {n} Freight Volume Districts in Tamil Nadu"
+        labels={"freight_volume_million_tonnes": "Annual Freight (Million Tonnes)", "district_name": "District"}
     )
 
     fig.update_layout(
         template=DARK_TEMPLATE,
         paper_bgcolor=THEME_BG,
         plot_bgcolor=THEME_BG,
-        margin=dict(l=10, r=20, t=50, b=40),
+        title=dict(
+            text=f"🚛 Top {n} Freight Volume Districts in Tamil Nadu",
+            y=0.96,
+            x=0.01,
+            xanchor="left",
+            yanchor="top",
+            font=dict(family="Inter, sans-serif", size=14, color="#FFFFFF")
+        ),
+        margin=dict(l=20, r=30, t=60, b=40),
         font=dict(family="Inter, sans-serif", color="#F8FAFC", size=12),
         coloraxis_showscale=False,
-        height=420
+        height=450
     )
     fig.update_traces(
         textposition="outside",
@@ -62,24 +69,31 @@ def render_regional_freight_donut(regional_df: pd.DataFrame) -> go.Figure:
         values="total_freight_mton",
         names="region",
         hole=0.5,
-        color_discrete_sequence=colors,
-        title="🌐 Regional Freight Share Breakdown"
+        color_discrete_sequence=colors
     )
 
     fig.update_layout(
         template=DARK_TEMPLATE,
         paper_bgcolor=THEME_BG,
         plot_bgcolor=THEME_BG,
-        margin=dict(l=20, r=20, t=50, b=40),
+        title=dict(
+            text="🌐 Regional Freight Share Breakdown",
+            y=0.96,
+            x=0.01,
+            xanchor="left",
+            yanchor="top",
+            font=dict(family="Inter, sans-serif", size=14, color="#FFFFFF")
+        ),
+        margin=dict(l=20, r=20, t=60, b=60),
         font=dict(family="Inter, sans-serif", color="#F8FAFC", size=12),
         legend=dict(
             orientation="h",
             yanchor="top",
-            y=-0.1,
+            y=-0.15,
             xanchor="center",
             x=0.5
         ),
-        height=420
+        height=450
     )
     fig.update_traces(
         textposition="outside",
@@ -91,7 +105,7 @@ def render_regional_freight_donut(regional_df: pd.DataFrame) -> go.Figure:
 def render_congestion_density_scatter(df: pd.DataFrame) -> go.Figure:
     """
     Renders a scatter plot: Road Network Density vs Congestion Index.
-    Legend positioned cleanly on top right to avoid overlap.
+    Clean title & legend positioning to prevent overlapping text.
     """
     if df.empty:
         return go.Figure()
@@ -109,26 +123,33 @@ def render_congestion_density_scatter(df: pd.DataFrame) -> go.Figure:
             "congestion_index": "Congestion Index",
             "freight_volume_million_tonnes": "Freight Volume (M Tonnes)",
             "region": "Region"
-        },
-        title="🔍 Infrastructure Matrix: Road Density vs Congestion Bottlenecks"
+        }
     )
 
     fig.update_layout(
         template=DARK_TEMPLATE,
         paper_bgcolor=THEME_BG,
         plot_bgcolor=THEME_BG,
-        margin=dict(l=20, r=20, t=60, b=50),
+        title=dict(
+            text="🔍 Infrastructure Matrix: Road Density vs Congestion Bottlenecks",
+            y=0.98,
+            x=0.01,
+            xanchor="left",
+            yanchor="top",
+            font=dict(family="Inter, sans-serif", size=14, color="#FFFFFF")
+        ),
+        margin=dict(l=40, r=30, t=70, b=90),
         font=dict(family="Inter, sans-serif", color="#F8FAFC", size=12),
         legend=dict(
             orientation="h",
-            yanchor="bottom",
-            y=1.02,
-            xanchor="right",
-            x=1
+            yanchor="top",
+            y=-0.22,
+            xanchor="center",
+            x=0.5
         ),
         xaxis=dict(showgrid=True, gridcolor="#1E293B", title=dict(font=dict(size=11))),
         yaxis=dict(showgrid=True, gridcolor="#1E293B", title=dict(font=dict(size=11))),
-        height=450
+        height=480
     )
     fig.update_traces(
         marker=dict(line=dict(width=1, color="#FFFFFF"), opacity=0.85),
@@ -168,19 +189,26 @@ def render_warehouse_capacity_chart(regional_df: pd.DataFrame) -> go.Figure:
         paper_bgcolor=THEME_BG,
         plot_bgcolor=THEME_BG,
         barmode="group",
-        margin=dict(l=20, r=20, t=60, b=50),
+        title=dict(
+            text="🏭 Logistics Infrastructure: Warehouses & Logistics Parks",
+            y=0.98,
+            x=0.01,
+            xanchor="left",
+            yanchor="top",
+            font=dict(family="Inter, sans-serif", size=14, color="#FFFFFF")
+        ),
+        margin=dict(l=40, r=30, t=70, b=90),
         font=dict(family="Inter, sans-serif", color="#F8FAFC", size=12),
         legend=dict(
             orientation="h",
-            yanchor="bottom",
-            y=1.02,
-            xanchor="right",
-            x=1
+            yanchor="top",
+            y=-0.22,
+            xanchor="center",
+            x=0.5
         ),
-        title="🏭 Logistics Infrastructure: Warehouses & Logistics Parks",
         xaxis_title="Region",
         yaxis_title="Facility Count",
-        height=450
+        height=480
     )
     return fig
 
@@ -200,19 +228,32 @@ def render_multiyear_trend_chart(multiyear_df: pd.DataFrame) -> go.Figure:
         color="region",
         markers=True,
         color_discrete_sequence=["#3B82F6", "#34D399", "#FBBF24", "#A855F7", "#EC4899"],
-        labels={"year": "Year", "freight_volume_million_tonnes": "Freight Volume (M Tonnes)", "region": "Region"},
-        title="📈 Multi-Year Freight Growth Trajectory (2020 – 2026)"
+        labels={"year": "Year", "freight_volume_million_tonnes": "Freight Volume (M Tonnes)", "region": "Region"}
     )
 
     fig.update_layout(
         template=DARK_TEMPLATE,
         paper_bgcolor=THEME_BG,
         plot_bgcolor=THEME_BG,
-        margin=dict(l=20, r=20, t=60, b=50),
+        title=dict(
+            text="📈 Multi-Year Freight Growth Trajectory (2020 – 2026)",
+            y=0.98,
+            x=0.01,
+            xanchor="left",
+            yanchor="top",
+            font=dict(family="Inter, sans-serif", size=14, color="#FFFFFF")
+        ),
+        margin=dict(l=40, r=30, t=70, b=90),
         font=dict(family="Inter, sans-serif", color="#F8FAFC", size=12),
-        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+        legend=dict(
+            orientation="h",
+            yanchor="top",
+            y=-0.22,
+            xanchor="center",
+            x=0.5
+        ),
         xaxis=dict(showgrid=True, gridcolor="#1E293B", dtick=1),
         yaxis=dict(showgrid=True, gridcolor="#1E293B"),
-        height=400
+        height=450
     )
     return fig

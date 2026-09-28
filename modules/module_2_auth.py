@@ -40,8 +40,7 @@ def run_module_2(role: str = "Administrator"):
     # VIEW 1: AUTHENTICATED USER PROFILE CARD (ACTIVE SESSION)
     # -------------------------------------------------------------
     if is_authenticated() and current_user:
-        st.balloons()
-        st.success(f"🎉 **Active Session**: Welcome, **{current_user['full_name']}** ({current_user['role']})")
+        st.success(f"**Active Session**: Welcome, **{current_user['full_name']}** ({current_user['role']})")
         
         st.markdown(f"""
         <div style="background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%); border: 2px solid #3B82F6; border-radius: 16px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); margin-bottom: 25px;">
@@ -161,9 +160,6 @@ def run_module_2(role: str = "Administrator"):
                             st.rerun()
                         except Exception as e:
                             st.error(f"Registration failed: {str(e)}")
-
-    st.success("✅ **Module 2 Authentication UI Operational**: Multi-tab login, registration, and active session manager ready.")
-
 if __name__ == "__main__":
     st.set_page_config(
         page_title="FreightOpt - Module 2 Authentication UI",

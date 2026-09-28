@@ -255,9 +255,6 @@ def run_module_4(role: str = "Administrator"):
                         st.rerun()
                     else:
                         st.error("Failed to update district metrics.")
-
-    st.success("✅ **Module 4 Project Input Complete**: Project proposal forms, approval status tracker, and district data editor operational.")
-
 if __name__ == "__main__":
     st.set_page_config(
         page_title="FreightOpt - Module 4 Project Input",

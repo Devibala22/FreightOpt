@@ -33,26 +33,26 @@ def main():
     # 2. Render sidebar navigation & retrieve active role & module
     role, selected_module = render_sidebar()
 
-    # 3. Router for all 10 Modules
-    if selected_module == "Module 1: Project Setup":
+    # 3. Router for all 10 Modules (Using clean labels)
+    if selected_module == "Project Setup":
         run_module_1(role=role)
-    elif selected_module == "Module 2: Authentication UI":
+    elif selected_module == "Authentication UI":
         run_module_2(role=role)
-    elif selected_module == "Module 3: Dashboard":
+    elif selected_module == "Dashboard":
         run_module_3(role=role)
-    elif selected_module == "Module 4: Project Input":
+    elif selected_module == "Project Input":
         run_module_4(role=role)
-    elif selected_module == "Module 5: Tamil Nadu GIS Map":
+    elif selected_module == "Tamil Nadu GIS Map":
         run_module_5(role=role)
-    elif selected_module == "Module 6: Infrastructure Deficit Page":
+    elif selected_module == "Infrastructure Deficit Page":
         run_module_6(role=role)
-    elif selected_module == "Module 7: Freight Prediction Page":
+    elif selected_module == "Freight Prediction Page":
         run_module_7(role=role)
-    elif selected_module == "Module 8: Budget Optimization":
+    elif selected_module == "Budget Optimization":
         run_module_8(role=role)
-    elif selected_module == "Module 9: Reports":
+    elif selected_module == "Reports":
         run_module_9(role=role)
-    elif selected_module == "Module 10: API Integration":
+    elif selected_module == "API Integration":
         run_module_10(role=role)
     else:
         run_module_3(role=role)

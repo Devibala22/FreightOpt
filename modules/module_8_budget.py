@@ -199,9 +199,6 @@ def run_module_8(role: str = "Administrator"):
                 use_container_width=True,
                 hide_index=True
             )
-
-    st.success(f"✅ **Module 8 Budget Optimization Complete**: Scipy Linear Programming solver executed successfully (Utilisation: {opt_res['utilisation_pct']:.1f}%).")
-
 if __name__ == "__main__":
     st.set_page_config(
         page_title="FreightOpt - Module 8 Budget Optimization",
